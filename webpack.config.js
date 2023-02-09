@@ -36,7 +36,14 @@ module.exports = {
                     "css-loader",
                     "sass-loader"
                 ]
-            }
+            },
+            {
+                test: /\.(png|jpg|svg|jpeg|webp)$/, // Nativo webpack 5
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/img/[hash][ext]',
+                }
+             }
         ]
     },
     plugins: [
