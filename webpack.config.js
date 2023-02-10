@@ -6,7 +6,8 @@ module.exports = {
     entry: './src/index.js', // Entry point de la app.
     output: { // Output point
         path: path.resolve(__dirname, 'dist'), // En nuestro path, crea la carpeta dist
-        filename: 'bundle.js' // Nombre de .js resultante
+        filename: 'bundle.js', // Nombre de .js resultante
+        publicPath: '/'
     },
     mode: 'development',
     resolve: { // Extensión de archivos a seguir.
@@ -56,6 +57,7 @@ module.exports = {
         })
     ],
     devServer: {
+        historyApiFallback: true,
         allowedHosts: path.join(__dirname, 'dist'), // contentBase en webpack 4, allowedHosts en webpack 5
         port: 3000,
         compress: true,
